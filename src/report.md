@@ -1,55 +1,56 @@
 ## 1. Part 1. Установка ОС
 1. Установка Ubuntu Server 20.04 LTS без графического интерфейса
+___
 2. Вывод версии Убунту в консоли:
-![Ubuntu version](https://i.postimg.cc/yNKY9FdB/Screenshot-8.png)
+![Ubuntu version](./screenshots/Screenshot_8.png)
 
 
 ## Part 2. Создание пользователя
 1. Создание пользователя, отличного от начального, который был задан при установке:
-   ![user](https://i.postimg.cc/856S0csw/user.png)
+   ![user](./screenshots/user.png)
 ___
 
 2.  Добавление пользователя в группу adm:
-   ![adm_user](https://i.postimg.cc/wjH309Ys/user-adm.png)
+   ![adm_user](./screenshots/user%20adm%20.png)
 ___
 3. Вывод команды  `cat /etc/passwd`:
-   ![etc_passwd](https://i.postimg.cc/jdRr12CK/cat-etc-pass.png)
+   ![etc_passwd](./screenshots/cat%20etc%20pass.png)
 
 ## Part 3. Настройка сети ОС
 1. Задаем машине имя __user-1__:
-   ![hostname](https://i.postimg.cc/c41JV0Jq/hostname.png)
+   ![hostname](./screenshots/hostname.png)
    ___
 2. Установить временную зону, соответствующую моему текущему местоположению:
-   ![timezone](https://i.postimg.cc/W1YLhPjk/timezone.png)
+   ![timezone](./screenshots/timezone.png)
    ___
 3. Вывести названия сетевых интерфейсов с помощью консольной команды:
-   ![network_name](https://i.postimg.cc/3N9710ML/netstat.png)
+   ![network_name](./screenshots/netstat.png)
    >(lo) Loopback — виртуальный интерфейс, который по умолчанию присутствует в любом Linux. Это совокупность методов, нужных для корректной работы маршрутизатора и передачи данных. Сам интерфейс же является отображением логических процессов в маршрутизаторе. Также саму технологию используют и для других целей: тестирование передачи данных от обслуживающего центра коммутации; проверка сигнала на расстоянии; обеспечение работы коммутационных кабелей и их проверка; тест обратной петли, когда сигнал посылается и возвращается отправителю по всем коммуникационным каналам.
    ___
 4. Используя консольную команду получить ip адрес устройства  от DHCP сервера:`10.0.2.15`
-   ![ip](https://i.postimg.cc/DwVRjWXf/myip.png)
+   ![ip](./screenshots/myip.png)
    
    >Протокол DHCP (Dynamic Host Configuration Protocol) относится к числу основных служб, формирующих инфраструктуру сетей. Он применяется для автоматического выполнения конфигурации сетевых параметров.
 ___
 5. Определить и вывести на экран внешний ip-адрес шлюза (ip) и внутренний IP-адрес шлюза, он же ip-адрес по умолчанию (gw) :
    * Внешний несколько способов через команду `curl`, мой внешний ip : `79.172.16.100`
-![external_ip](https://i.postimg.cc/y8vtVLGx/external-ip.png)
+![external_ip](./screenshots/external_ip.png)
     * Мой внутренний ip : `10.0.2.15`
-    ![internal_ip](https://i.postimg.cc/0N7SY4q2/internal-ip.png)
+    ![internal_ip](./screenshots/internal%20ip.png)
     ___
 6. Задать статичные (заданные вручную, а не полученные от DHCP сервера) настройки ip, gw, dns (использовать публичный DNS серверы, например 1.1.1.1 или 8.8.8.8) : 
   * Использовал команду `sudo vim /etc/netplan/00-installer-config.yaml` чтобы изменить настройки адреса вручную и привел в такой вид:
-  ![changing_ip](https://i.postimg.cc/Y2QmTZ46/changing-ip.png)
+  ![changing_ip](./screenshots/changing%20ip.png)
 
   * Сохранил настройки с помощью команды `sudo netplan apply`
   * Через команду `ip route` увидел статический адрес:
-  ![static_ip](https://i.postimg.cc/L4grSBRB/static-new-ip.png)
+  ![static_ip](./screenshots/static_new_ip.png)
 
   * После перезагрузки изменения сохранились:
   ![ip_saved_reboot](https://i.postimg.cc/rFFxWgm5/savedip.png)
 
   * Пропинговал удаленные хосты 1.1.1.1 и ya.ru:
-  ![ping_ya.ru](https://i.postimg.cc/K8Tzggnn/ping.png)
+  ![ping_ya.ru](./screenshots/ping.png)
 
 ## Part 4. Обновление ОС
 1. Использовал команду `sudo apt update` для синхронизации пакетов
@@ -57,4 +58,4 @@ ___
 2. Использовал команду `sudo apt upgrade` для обновления 
    ___
 3. Повторно запускаем предыдущую команду для проверки, что больше обновлений нет:
-![updated_sys](https://i.postimg.cc/cHzymFW6/upgraded-system.png)
+![updated_sys](./screenshots/upgraded_system.png)
