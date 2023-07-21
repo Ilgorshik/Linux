@@ -47,7 +47,7 @@ ___
   ![static_ip](./screenshots/static_new_ip.png)
 
   * После перезагрузки изменения сохранились:
-  ![ip_saved_reboot](https://i.postimg.cc/rFFxWgm5/savedip.png)
+  ![ip_saved_reboot](./screenshots/savedip.png)
 
   * Пропинговал удаленные хосты 1.1.1.1 и ya.ru:
   ![ping_ya.ru](./screenshots/ping.png)
